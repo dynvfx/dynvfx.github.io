@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9914bae7-35fe-4ec1-a886-dd41ba707b12" name="Changes" comment="v2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/horizontal_comparisons/bikers_dinosaurs.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/horizontal_comparisons/box_puppy.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/horizontal_comparisons/clouds_balloons.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/horizontal_comparisons/coral_jellyfish.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/horizontal_comparisons/coral_sharks.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/horizontal_comparisons/creek_lion.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/horizontal_comparisons/cycle_view_explosion.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/horizontal_comparisons/dancer_stage_audience.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/horizontal_comparisons/desert_explosion.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/horizontal_comparisons/exotic_road_workers.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/horizontal_comparisons/girl_beach_puppy.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/horizontal_comparisons/girl_beach_walrus.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/horizontal_comparisons/girl_living_room_balloons.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/horizontal_comparisons/horse_knight.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/horizontal_comparisons/jogging_river_retriever.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/horizontal_comparisons/scuba_whale.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/horizontal_comparisons/taxi_Tsunami.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/horizontal_comparisons/tree_sunlight_deer.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/horizontal_comparisons/tree_sunlight_elephant.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/horizontal_comparisons/tree_sunlight_giraffe.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/horizontal_comparisons/tree_sunlight_gorilla.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/horizontal_comparisons/tree_sunlight_lion.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/pool_jump/cosmos_1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/pool_jump/cosmos_2.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/pool_jump/cosmos_3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/pool_jump/pool_jump.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/south_africa_beach/south_africa_beach.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/south_africa_beach/south_africa_beach_pirate_12.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/south_africa_beach/south_africa_beach_pirate_2.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/south_africa_beach/south_africa_beach_pirate_3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/south_africa_beach/south_africa_beach_pirate_4.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/south_africa_beach/south_africa_beach_pirate_5.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/south_africa_beach/south_africa_beach_pirate_7.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/south_africa_beach/south_africa_beach_pirate_9.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/south_africa_beach/south_africa_beach_surf_1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/south_africa_beach/south_africa_beach_surf_2.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/wis_trees/wis_trees.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/wis_trees/wis_trees_1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/wis_trees/wis_trees_2.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/wis_trees/wis_trees_3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/wis_trees/wis_trees_4.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/wis_trees/wis_trees_5.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/wis_trees_again/butterflies.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/wis_trees_again/mammoth_1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/wis_trees_again/mammoth_2.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm/assets/results/wis_trees_again/wis_trees_again.mp4" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2sdfIJbCRuSqJDimNTAjKku3LRb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/danahy/PycharmProjects/dynvfx.github.io&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="dynvfx.github.io" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9914bae7-35fe-4ec1-a886-dd41ba707b12" name="Changes" comment="" />
+      <created>1738790295448</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1738790295448</updated>
+      <workItem from="1738790297347" duration="3443000" />
+      <workItem from="1738796012568" duration="1103000" />
+    </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <option name="closed" value="true" />
+      <created>1738790777883</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1738790777883</updated>
+    </task>
+    <task id="LOCAL-00002" summary="v2">
+      <option name="closed" value="true" />
+      <created>1738793352543</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1738793352543</updated>
+    </task>
+    <task id="LOCAL-00003" summary="v2">
+      <option name="closed" value="true" />
+      <created>1738793788697</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1738793788697</updated>
+    </task>
+    <task id="LOCAL-00004" summary="v2">
+      <option name="closed" value="true" />
+      <created>1738794219446</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1738794219446</updated>
+    </task>
+    <task id="LOCAL-00005" summary="v2">
+      <option name="closed" value="true" />
+      <created>1738796454280</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1738796454280</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <MESSAGE value="v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="v2" />
+  </component>
+</project>

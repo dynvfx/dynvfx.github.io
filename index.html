@@ -1,0 +1,1981 @@
+
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+    <meta charset="utf-8">
+    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+<!--    <meta name="description" content="DESCRIPTION META TAG">-->
+<!--    <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>-->
+<!--    <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>-->
+<!--    <meta property="og:url" content="URL OF THE WEBSITE"/>-->
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+<!--    <meta property="og:image" content="static/image/your_banner_image.png"/>-->
+<!--    <meta property="og:image:width" content="1200"/>-->
+<!--    <meta property="og:image:height" content="630"/>-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+<!--<style>-->
+
+<!--@font-face {-->
+<!--    font-family: "Latin Modern Math";-->
+<!--    src: url("https://cdn.jsdelivr.net/npm/latin-modern-math@0.1.0/latinmodernmath.woff2") format("woff2");-->
+<!--}-->
+<!--</style>-->
+
+
+<!--    <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">-->
+<!--    <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">-->
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+<!--    <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">-->
+<!--    <meta name="twitter:card" content="summary_large_image">-->
+    <!-- Keywords for your paper to be indexed by-->
+<!--    <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+
+        <title>DynVFX: Augmenting Real Videos with Dynamic Content</title>
+    
+   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.css">
+    <link rel="stylesheet" href="static/css/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+
+
+    <!-- bootstrap 4.5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
+
+    <!-- slick 1.9 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+    <!--    mathjax -->
+    <script type="text/x-mathjax-config"> MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\(','\)']]}});</script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="static/js/index.js"></script>
+    <link href="https://fonts.cdnfonts.com/css/chalkduster" rel="stylesheet">
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/chalkduster');
+    </style>
+
+
+    </head>
+    
+       <body>
+      
+
+       <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">DynVFX: Augmenting Real Videos <br> with Dynamic Content</h1>
+                              <div class="column has-text-centered">
+
+                                <div class="publication-links">
+                                    <span class="link-block">
+                                    <a href='./DynVFX.pdf' target="_blank"
+                                    class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                      <i class="fas fa-file-pdf"></i>
+                                    </span>
+                                    <span>Paper</span>
+                                      </a>
+                                    </span>
+                                     <span class="link-block">
+                                <a href="https://arxiv.org/abs/2502.03621" class="external-link button is-normal is-rounded is-dark">
+                                <span class="icon">
+                                  <i class="ai ai-arxiv"></i>
+                                </span>
+                                <span>Arxiv</span>
+                                  </a>
+                                </span>
+                                    <span class="link-block">
+                                    <a href="" class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                      <i class="fa-brands fa-github"></i>
+                                    </span>
+                                    <span>Code (<i>coming soon</i>)</span>
+                                      </a>
+                                    </span>
+
+                                    <!-- Supplementary PDF link -->
+                                    <span class="link-block">
+                                      <a href="sm/index.html" target="_blank"
+                                         class="external-link button is-normal is-rounded is-dark">
+                                      <span>Supplementary Material</span>
+                                    </a>
+                                  </span>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+                </div>
+    </section>
+    <!-- Teaser video-->
+  <section class="hero teaser">
+  <div class="container is-max-desktop">
+        <div class="container is-max-desktop is-centered has-text-centered">
+
+      <video autoplay="" muted="" loop="" playsinline="" width="720px" height="480px">Your browser does not support the &lt;video&gt; tag.
+        <source src="sm/assets/teaser.mp4" type="video/mp4">
+      </video>
+  </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+    <!-- Paper abstract -->
+    <section class="section hero is-light is-small">
+    <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+<p>
+We present a method for augmenting real-world videos with newly generated dynamic content. Given an input video and a simple user-provided text instruction describing the desired content, our method synthesizes dynamic objects or complex scene effects that naturally interact with the existing scene over time. The position, appearance, and motion of the new content are seamlessly integrated into the original footage while accounting for camera motion, occlusions, and interactions with other dynamic objects in the scene, resulting in a cohesive and realistic output video. We achieve this via a zero-shot, training-free framework that harnesses a pre-trained transformer-based text-to-video diffusion model to synthesize the new content and a pre-trained Vision Language Model to envision the augmented scene in detail. Specifically, we introduce a novel sampling-based method that manipulates features within the attention mechanism, enabling accurate localization and seamless integration of the new content while preserving the integrity of the original scene.
+Our method is fully automated, requiring only a simple user instruction. We demonstrate its effectiveness on a wide range of edits applied to real-world videos, encompassing diverse objects and scenarios involving both camera and object motion.
+
+                        </p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- End paper abstract -->
+
+
+   <section class="hero teaser" id="results">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-full-width">
+                <!-- Container -->
+                <div class="container" id="carousel">
+<div id="slick">
+
+<div class="comparison-wrapper" style="background: white; padding: 40px; border-radius: 20px; margin: 20px auto; max-width: 1500px;">
+                        <!-- Videos row -->
+                        <div style="display: flex; justify-content: space-between; gap: 40px; margin-bottom: 20px;">
+                            <!-- Input video -->
+                            <div style="flex: 1;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        🎬 INPUT VIDEO
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="input-video_0" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/tree_sunlight/tree_sunlight.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+
+                            <!-- Result video (hidden initially) -->
+                            <div id="result-container_0" style="flex: 1; opacity: 0; transition: opacity 1s ease;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        ✨ VFX RESULT
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="result-video_0" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/tree_sunlight/tree_sunlight_giraffe.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Typing animation centered below -->
+                        <div style="display: flex; justify-content: center; margin-top: 30px;">
+                            <div class="typewriter-input-0" style="background: #DCEFE1; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 8px 16px; min-width: 250px;">
+                                <span class="cursor_0" style="border-right: 2px solid white;">|</span>
+                            </div>
+                        </div>
+                        <style>
+
+                        @font-face {
+                            font-family: 'American Typewriter';
+                            src: url('https://fonts.cdnfonts.com/css/american-typewriter');
+                        }
+
+
+                        .typewriter-input-0  {
+                            font-family: 'American Typewriter', monospace;
+                            font-size: 1em;
+                            color: black;
+                            text-align: left;
+                        }
+
+@keyframes blink_0
+ {
+                            0%, 100% { opacity: 1; }
+                            50% { opacity: 0; }
+                        }
+
+
+                        .cursor_0  {
+
+  animation: blink_0 1s step-end infinite;
+}
+.typed-text_0
+
+     {
+                            display: inline;
+                        }
+                    </style>
+
+                    <script>
+
+                        function initializeVideo_0()
+
+{
+
+                            const text_0 = "Add a giraffe walking!";
+                            const typewriterInput_0 = document.querySelector('.typewriter-input-0');
+                            const cursor_0 = document.querySelector('.cursor_0');
+                            const resultContainer_0 = document.getElementById('result-container_0');
+                            let charIndex_0 = 0;
+
+                            function type_0()
+                            {
+                                if (charIndex_0 < text_0.length) {
+                                    const span = document.createElement('span');
+                                    span.className = 'typed-text_0';
+                                    span.textContent = text_0.charAt(charIndex_0);
+                                    typewriterInput_0.insertBefore(span, cursor_0);
+                                    charIndex_0++;
+                                    setTimeout(type_0, 100);
+                                    } else {// Show result after typing completes
+                                    setTimeout(() => {
+
+                                        resultContainer_0.style.opacity = '1';
+
+                                    }, 1);
+                                }
+                            }
+
+
+                            setTimeout(type_0, 1);
+
+                        }
+
+document.addEventListener('DOMContentLoaded', initializeVideo_0);
+                    </script>
+</div>
+<div class="comparison-wrapper" style="background: white; padding: 40px; border-radius: 20px; margin: 20px auto; max-width: 1500px;">
+                            <!-- Videos row -->
+                            <div style="display: flex; justify-content: space-between; gap: 40px; margin-bottom: 20px;">
+                                <!-- Input video -->
+                                <div style="flex: 1;">
+                                    <div style="text-align: center; margin-bottom: 15px;">
+                                        <span style="font-weight: 500; font-size: 1.1em;">
+                                            🎬 INPUT VIDEO
+                                        </span>
+                                    </div>
+                                    <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                        <video id="input-video_19" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                            <source src="sm/assets/results/wis_trees/wis_trees.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                </div>
+
+                                <!-- Result video (hidden initially) -->
+                                <div id="result-container_19" style="flex: 1; opacity: 0; transition: opacity 1s ease;">
+                                    <div style="text-align: center; margin-bottom: 15px;">
+                                        <span style="font-weight: 500; font-size: 1.1em;">
+                                            ✨ VFX RESULT
+                                        </span>
+                                    </div>
+                                    <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                        <video id="result-video_19" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                            <source src="sm/assets/results/wis_trees/wis_trees_5.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Typing animation centered below -->
+                            <div style="display: flex; justify-content: center; margin-top: 30px;">
+                                <div class="typewriter-input-19" style="background: #DCEFE1; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 8px 16px; min-width: 250px;">
+                                    <span class="cursor_19" style="border-right: 2px solid white;">|</span>
+                                </div>
+                            </div>
+                            <style>
+
+                            @font-face {
+                                font-family: 'American Typewriter';
+                                src: url('https://fonts.cdnfonts.com/css/american-typewriter');
+                            }
+
+
+                            .typewriter-input-19  {
+                                font-family: 'American Typewriter', monospace;
+                                font-size: 1em;
+                                color: black;
+                                text-align: left;
+                            }
+
+    @keyframes blink_19
+     {
+                                0%, 100% { opacity: 1; }
+                                50% { opacity: 0; }
+                            }
+
+
+                            .cursor_19  {
+
+      animation: blink_19 1s step-end infinite;
+    }
+    .typed-text_19
+
+         {
+                                display: inline;
+                            }
+                        </style>
+
+                        <script>
+
+                            function initializeVideo_19()
+
+    {
+
+                                const text_19 = "Add a dinosaur walking towards the camera!";
+                                const typewriterInput_19 = document.querySelector('.typewriter-input-19');
+                                const cursor_19 = document.querySelector('.cursor_19');
+                                const resultContainer_19 = document.getElementById('result-container_19');
+                                let charIndex_19 = 0;
+
+                                function type_19()
+                                {
+                                    if (charIndex_19 < text_19.length) {
+                                        const span = document.createElement('span');
+                                        span.className = 'typed-text_19';
+                                        span.textContent = text_19.charAt(charIndex_19);
+                                        typewriterInput_19.insertBefore(span, cursor_19);
+                                        charIndex_19++;
+                                        setTimeout(type_19, 100);
+                                        } else {// Show result after typing completes
+                                        setTimeout(() => {
+
+                                            resultContainer_19.style.opacity = '1';
+
+                                        }, 1);
+                                    }
+                                }
+
+
+                                setTimeout(type_19, 1);
+
+                            }
+
+    document.addEventListener('DOMContentLoaded', initializeVideo_19);
+                        </script>
+    </div>
+<div class="comparison-wrapper" style="background: white; padding: 40px; border-radius: 20px; margin: 20px auto; max-width: 1500px;">
+                        <!-- Videos row -->
+                        <div style="display: flex; justify-content: space-between; gap: 40px; margin-bottom: 20px;">
+                            <!-- Input video -->
+                            <div style="flex: 1;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        🎬 INPUT VIDEO
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="input-video_1" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/beagle/beagle.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+
+                            <!-- Result video (hidden initially) -->
+                            <div id="result-container_1" style="flex: 1; opacity: 0; transition: opacity 1s ease;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        ✨ VFX RESULT
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="result-video_1" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/beagle/beagle_dragon.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Typing animation centered below -->
+                        <div style="display: flex; justify-content: center; margin-top: 30px;">
+                            <div class="typewriter-input-1" style="background: #DCEFE1; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 8px 16px; min-width: 250px;">
+                                <span class="cursor_1" style="border-right: 2px solid white;">|</span>
+                            </div>
+                        </div>
+                        <style>
+
+                        @font-face {
+                            font-family: 'American Typewriter';
+                            src: url('https://fonts.cdnfonts.com/css/american-typewriter');
+                        }
+
+
+                        .typewriter-input-1  {
+                            font-family: 'American Typewriter', monospace;
+                            font-size: 1em;
+                            color: black;
+                            text-align: left;
+                        }
+
+@keyframes blink_1
+ {
+                            0%, 100% { opacity: 1; }
+                            50% { opacity: 0; }
+                        }
+
+
+                        .cursor_1  {
+
+  animation: blink_1 1s step-end infinite;
+}
+.typed-text_1
+
+     {
+                            display: inline;
+                        }
+                    </style>
+
+                    <script>
+
+                        function initializeVideo_1()
+
+{
+
+                            const text_1 = "Add a fire breathing dragon chasing the dog!";
+                            const typewriterInput_1 = document.querySelector('.typewriter-input-1');
+                            const cursor_1 = document.querySelector('.cursor_1');
+                            const resultContainer_1 = document.getElementById('result-container_1');
+                            let charIndex_1 = 0;
+
+                            function type_1()
+                            {
+                                if (charIndex_1 < text_1.length) {
+                                    const span = document.createElement('span');
+                                    span.className = 'typed-text_1';
+                                    span.textContent = text_1.charAt(charIndex_1);
+                                    typewriterInput_1.insertBefore(span, cursor_1);
+                                    charIndex_1++;
+                                    setTimeout(type_1, 100);
+                                    } else {// Show result after typing completes
+                                    setTimeout(() => {
+
+                                        resultContainer_1.style.opacity = '1';
+
+                                    }, 1);
+                                }
+                            }
+
+
+                            setTimeout(type_1, 1);
+
+                        }
+
+document.addEventListener('DOMContentLoaded', initializeVideo_1);
+                    </script>
+</div>
+
+<div class="comparison-wrapper" style="background: white; padding: 40px; border-radius: 20px; margin: 20px auto; max-width: 1500px;">
+                        <!-- Videos row -->
+                        <div style="display: flex; justify-content: space-between; gap: 40px; margin-bottom: 20px;">
+                            <!-- Input video -->
+                            <div style="flex: 1;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        🎬 INPUT VIDEO
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="input-video_2" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/scuba/scuba.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+
+                            <!-- Result video (hidden initially) -->
+                            <div id="result-container_2" style="flex: 1; opacity: 0; transition: opacity 1s ease;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        ✨ VFX RESULT
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="result-video_2" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/scuba/scuba_whale.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Typing animation centered below -->
+                        <div style="display: flex; justify-content: center; margin-top: 30px;">
+                            <div class="typewriter-input-2" style="background: #DCEFE1; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 8px 16px; min-width: 250px;">
+                                <span class="cursor_2" style="border-right: 2px solid white;">|</span>
+                            </div>
+                        </div>
+                        <style>
+
+                        @font-face {
+                            font-family: 'American Typewriter';
+                            src: url('https://fonts.cdnfonts.com/css/american-typewriter');
+                        }
+
+
+                        .typewriter-input-2  {
+                            font-family: 'American Typewriter', monospace;
+                            font-size: 1em;
+                            color: black;
+                            text-align: left;
+                        }
+
+@keyframes blink_2
+ {
+                            0%, 100% { opacity: 1; }
+                            50% { opacity: 0; }
+                        }
+
+
+                        .cursor_2  {
+
+  animation: blink_2 1s step-end infinite;
+}
+.typed-text_2
+
+     {
+                            display: inline;
+                        }
+                    </style>
+
+                    <script>
+
+                        function initializeVideo_2()
+
+{
+
+                            const text_2 = "Add a majestic whale in the background!";
+                            const typewriterInput_2 = document.querySelector('.typewriter-input-2');
+                            const cursor_2 = document.querySelector('.cursor_2');
+                            const resultContainer_2 = document.getElementById('result-container_2');
+                            let charIndex_2 = 0;
+
+                            function type_2()
+                            {
+                                if (charIndex_2 < text_2.length) {
+                                    const span = document.createElement('span');
+                                    span.className = 'typed-text_2';
+                                    span.textContent = text_2.charAt(charIndex_2);
+                                    typewriterInput_2.insertBefore(span, cursor_2);
+                                    charIndex_2++;
+                                    setTimeout(type_2, 100);
+                                    } else {// Show result after typing completes
+                                    setTimeout(() => {
+
+                                        resultContainer_2.style.opacity = '1';
+
+                                    }, 1);
+                                }
+                            }
+
+
+                            setTimeout(type_2, 1);
+
+                        }
+
+document.addEventListener('DOMContentLoaded', initializeVideo_2);
+                    </script>
+</div>
+
+<div class="comparison-wrapper" style="background: white; padding: 40px; border-radius: 20px; margin: 20px auto; max-width: 1500px;">
+                        <!-- Videos row -->
+                        <div style="display: flex; justify-content: space-between; gap: 40px; margin-bottom: 20px;">
+                            <!-- Input video -->
+                            <div style="flex: 1;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        🎬 INPUT VIDEO
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="input-video_3" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/cycle_view/cycle_view.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+
+                            <!-- Result video (hidden initially) -->
+                            <div id="result-container_3" style="flex: 1; opacity: 0; transition: opacity 1s ease;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        ✨ VFX RESULT
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="result-video_3" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/cycle_view/cycle_view_explosion.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Typing animation centered below -->
+                        <div style="display: flex; justify-content: center; margin-top: 30px;">
+                            <div class="typewriter-input-3" style="background: #DCEFE1; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 8px 16px; min-width: 250px;">
+                                <span class="cursor_3" style="border-right: 2px solid white;">|</span>
+                            </div>
+                        </div>
+                        <style>
+
+                        @font-face {
+                            font-family: 'American Typewriter';
+                            src: url('https://fonts.cdnfonts.com/css/american-typewriter');
+                        }
+
+
+                        .typewriter-input-3  {
+                            font-family: 'American Typewriter', monospace;
+                            font-size: 1em;
+                            color: black;
+                            text-align: left;
+                        }
+
+@keyframes blink_3
+ {
+                            0%, 100% { opacity: 1; }
+                            50% { opacity: 0; }
+                        }
+
+
+                        .cursor_3  {
+
+  animation: blink_3 1s step-end infinite;
+}
+.typed-text_3
+
+     {
+                            display: inline;
+                        }
+                    </style>
+
+                    <script>
+
+                        function initializeVideo_3()
+
+{
+
+                            const text_3 = "Add a massive explosion from the mountain!";
+                            const typewriterInput_3 = document.querySelector('.typewriter-input-3');
+                            const cursor_3 = document.querySelector('.cursor_3');
+                            const resultContainer_3 = document.getElementById('result-container_3');
+                            let charIndex_3 = 0;
+
+                            function type_3()
+                            {
+                                if (charIndex_3 < text_3.length) {
+                                    const span = document.createElement('span');
+                                    span.className = 'typed-text_3';
+                                    span.textContent = text_3.charAt(charIndex_3);
+                                    typewriterInput_3.insertBefore(span, cursor_3);
+                                    charIndex_3++;
+                                    setTimeout(type_3, 100);
+                                    } else {// Show result after typing completes
+                                    setTimeout(() => {
+
+                                        resultContainer_3.style.opacity = '1';
+
+                                    }, 1);
+                                }
+                            }
+
+
+                            setTimeout(type_3, 1);
+
+                        }
+
+document.addEventListener('DOMContentLoaded', initializeVideo_3);
+                    </script>
+</div>
+
+<div class="comparison-wrapper" style="background: white; padding: 40px; border-radius: 20px; margin: 20px auto; max-width: 1500px;">
+                        <!-- Videos row -->
+                        <div style="display: flex; justify-content: space-between; gap: 40px; margin-bottom: 20px;">
+                            <!-- Input video -->
+                            <div style="flex: 1;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        🎬 INPUT VIDEO
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="input-video_4" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/box/box.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+
+                            <!-- Result video (hidden initially) -->
+                            <div id="result-container_4" style="flex: 1; opacity: 0; transition: opacity 1s ease;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        ✨ VFX RESULT
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="result-video_4" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/box/box_puppy.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Typing animation centered below -->
+                        <div style="display: flex; justify-content: center; margin-top: 30px;">
+                            <div class="typewriter-input-4" style="background: #DCEFE1; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 8px 16px; min-width: 250px;">
+                                <span class="cursor_4" style="border-right: 2px solid white;">|</span>
+                            </div>
+                        </div>
+                        <style>
+
+                        @font-face {
+                            font-family: 'American Typewriter';
+                            src: url('https://fonts.cdnfonts.com/css/american-typewriter');
+                        }
+
+
+                        .typewriter-input-4  {
+                            font-family: 'American Typewriter', monospace;
+                            font-size: 1em;
+                            color: black;
+                            text-align: left;
+                        }
+
+@keyframes blink_4
+ {
+                            0%, 100% { opacity: 1; }
+                            50% { opacity: 0; }
+                        }
+
+
+                        .cursor_4  {
+
+  animation: blink_4 1s step-end infinite;
+}
+.typed-text_4
+
+     {
+                            display: inline;
+                        }
+                    </style>
+
+                    <script>
+
+                        function initializeVideo_4()
+
+{
+
+                            const text_4 = "Add a puppy peaking its head out of the box!";
+                            const typewriterInput_4 = document.querySelector('.typewriter-input-4');
+                            const cursor_4 = document.querySelector('.cursor_4');
+                            const resultContainer_4 = document.getElementById('result-container_4');
+                            let charIndex_4 = 0;
+
+                            function type_4()
+                            {
+                                if (charIndex_4 < text_4.length) {
+                                    const span = document.createElement('span');
+                                    span.className = 'typed-text_4';
+                                    span.textContent = text_4.charAt(charIndex_4);
+                                    typewriterInput_4.insertBefore(span, cursor_4);
+                                    charIndex_4++;
+                                    setTimeout(type_4, 100);
+                                    } else {// Show result after typing completes
+                                    setTimeout(() => {
+
+                                        resultContainer_4.style.opacity = '1';
+
+                                    }, 1);
+                                }
+                            }
+
+
+                            setTimeout(type_4, 1);
+
+                        }
+
+document.addEventListener('DOMContentLoaded', initializeVideo_4);
+                    </script>
+</div>
+
+<div class="comparison-wrapper" style="background: white; padding: 40px; border-radius: 20px; margin: 20px auto; max-width: 1500px;">
+                        <!-- Videos row -->
+                        <div style="display: flex; justify-content: space-between; gap: 40px; margin-bottom: 20px;">
+                            <!-- Input video -->
+                            <div style="flex: 1;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        🎬 INPUT VIDEO
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="input-video_5" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/horse/horse.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+
+                            <!-- Result video (hidden initially) -->
+                            <div id="result-container_5" style="flex: 1; opacity: 0; transition: opacity 1s ease;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        ✨ VFX RESULT
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="result-video_5" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/horse/horse_knight.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Typing animation centered below -->
+                        <div style="display: flex; justify-content: center; margin-top: 30px;">
+                            <div class="typewriter-input-5" style="background: #DCEFE1; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 8px 16px; min-width: 250px;">
+                                <span class="cursor_5" style="border-right: 2px solid white;">|</span>
+                            </div>
+                        </div>
+                        <style>
+
+                        @font-face {
+                            font-family: 'American Typewriter';
+                            src: url('https://fonts.cdnfonts.com/css/american-typewriter');
+                        }
+
+
+                        .typewriter-input-5  {
+                            font-family: 'American Typewriter', monospace;
+                            font-size: 1em;
+                            color: black;
+                            text-align: left;
+                        }
+
+@keyframes blink_5
+ {
+                            0%, 100% { opacity: 1; }
+                            50% { opacity: 0; }
+                        }
+
+
+                        .cursor_5  {
+
+  animation: blink_5 1s step-end infinite;
+}
+.typed-text_5
+
+     {
+                            display: inline;
+                        }
+                    </style>
+
+                    <script>
+
+                        function initializeVideo_5()
+
+{
+
+                            const text_5 = "Add a majestic knight rides the horse!";
+                            const typewriterInput_5 = document.querySelector('.typewriter-input-5');
+                            const cursor_5 = document.querySelector('.cursor_5');
+                            const resultContainer_5 = document.getElementById('result-container_5');
+                            let charIndex_5 = 0;
+
+                            function type_5()
+                            {
+                                if (charIndex_5 < text_5.length) {
+                                    const span = document.createElement('span');
+                                    span.className = 'typed-text_5';
+                                    span.textContent = text_5.charAt(charIndex_5);
+                                    typewriterInput_5.insertBefore(span, cursor_5);
+                                    charIndex_5++;
+                                    setTimeout(type_5, 100);
+                                    } else {// Show result after typing completes
+                                    setTimeout(() => {
+
+                                        resultContainer_5.style.opacity = '1';
+
+                                    }, 1);
+                                }
+                            }
+
+
+                            setTimeout(type_5, 1);
+
+                        }
+
+document.addEventListener('DOMContentLoaded', initializeVideo_5);
+                    </script>
+</div>
+
+<div class="comparison-wrapper" style="background: white; padding: 40px; border-radius: 20px; margin: 20px auto; max-width: 1500px;">
+                        <!-- Videos row -->
+                        <div style="display: flex; justify-content: space-between; gap: 40px; margin-bottom: 20px;">
+                            <!-- Input video -->
+                            <div style="flex: 1;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        🎬 INPUT VIDEO
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="input-video_6" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/jogging_river/jogging_river.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+
+                            <!-- Result video (hidden initially) -->
+                            <div id="result-container_6" style="flex: 1; opacity: 0; transition: opacity 1s ease;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        ✨ VFX RESULT
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="result-video_6" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/jogging_river/jogging_river_golden.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Typing animation centered below -->
+                        <div style="display: flex; justify-content: center; margin-top: 30px;">
+                            <div class="typewriter-input-6" style="background: #DCEFE1; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 8px 16px; min-width: 250px;">
+                                <span class="cursor_6" style="border-right: 2px solid white;">|</span>
+                            </div>
+                        </div>
+                        <style>
+
+                        @font-face {
+                            font-family: 'American Typewriter';
+                            src: url('https://fonts.cdnfonts.com/css/american-typewriter');
+                        }
+
+
+                        .typewriter-input-6  {
+                            font-family: 'American Typewriter', monospace;
+                            font-size: 1em;
+                            color: black;
+                            text-align: left;
+                        }
+
+@keyframes blink_6
+ {
+                            0%, 100% { opacity: 1; }
+                            50% { opacity: 0; }
+                        }
+
+
+                        .cursor_6  {
+
+  animation: blink_6 1s step-end infinite;
+}
+.typed-text_6
+
+     {
+                            display: inline;
+                        }
+                    </style>
+
+                    <script>
+
+                        function initializeVideo_6()
+
+{
+
+                            const text_6 = "Add a playful golden retriever swimming trying to catch up with the joggers!";
+                            const typewriterInput_6 = document.querySelector('.typewriter-input-6');
+                            const cursor_6 = document.querySelector('.cursor_6');
+                            const resultContainer_6 = document.getElementById('result-container_6');
+                            let charIndex_6 = 0;
+
+                            function type_6()
+                            {
+                                if (charIndex_6 < text_6.length) {
+                                    const span = document.createElement('span');
+                                    span.className = 'typed-text_6';
+                                    span.textContent = text_6.charAt(charIndex_6);
+                                    typewriterInput_6.insertBefore(span, cursor_6);
+                                    charIndex_6++;
+                                    setTimeout(type_6, 100);
+                                    } else {// Show result after typing completes
+                                    setTimeout(() => {
+
+                                        resultContainer_6.style.opacity = '1';
+
+                                    }, 1);
+                                }
+                            }
+
+
+                            setTimeout(type_6, 1);
+
+                        }
+
+document.addEventListener('DOMContentLoaded', initializeVideo_6);
+                    </script>
+</div>
+
+<div class="comparison-wrapper" style="background: white; padding: 40px; border-radius: 20px; margin: 20px auto; max-width: 1500px;">
+                        <!-- Videos row -->
+                        <div style="display: flex; justify-content: space-between; gap: 40px; margin-bottom: 20px;">
+                            <!-- Input video -->
+                            <div style="flex: 1;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        🎬 INPUT VIDEO
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="input-video_7" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/dancer_stage/dancer_stage.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+
+                            <!-- Result video (hidden initially) -->
+                            <div id="result-container_7" style="flex: 1; opacity: 0; transition: opacity 1s ease;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        ✨ VFX RESULT
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="result-video_7" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/dancer_stage/dancer_audience.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Typing animation centered below -->
+                        <div style="display: flex; justify-content: center; margin-top: 30px;">
+                            <div class="typewriter-input-7" style="background: #DCEFE1; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 8px 16px; min-width: 250px;">
+                                <span class="cursor_7" style="border-right: 2px solid white;">|</span>
+                            </div>
+                        </div>
+                        <style>
+
+                        @font-face {
+                            font-family: 'American Typewriter';
+                            src: url('https://fonts.cdnfonts.com/css/american-typewriter');
+                        }
+
+
+                        .typewriter-input-7  {
+                            font-family: 'American Typewriter', monospace;
+                            font-size: 1em;
+                            color: black;
+                            text-align: left;
+                        }
+
+@keyframes blink_7
+ {
+                            0%, 100% { opacity: 1; }
+                            50% { opacity: 0; }
+                        }
+
+
+                        .cursor_7  {
+
+  animation: blink_7 1s step-end infinite;
+}
+.typed-text_7
+
+     {
+                            display: inline;
+                        }
+                    </style>
+
+                    <script>
+
+                        function initializeVideo_7()
+
+{
+
+                            const text_7 = "Add an enthusiastic audience, clapping and snapping photos, as the dancer takes a bow!";
+                            const typewriterInput_7 = document.querySelector('.typewriter-input-7');
+                            const cursor_7 = document.querySelector('.cursor_7');
+                            const resultContainer_7 = document.getElementById('result-container_7');
+                            let charIndex_7 = 0;
+
+                            function type_7()
+                            {
+                                if (charIndex_7 < text_7.length) {
+                                    const span = document.createElement('span');
+                                    span.className = 'typed-text_7';
+                                    span.textContent = text_7.charAt(charIndex_7);
+                                    typewriterInput_7.insertBefore(span, cursor_7);
+                                    charIndex_7++;
+                                    setTimeout(type_7, 100);
+                                    } else {// Show result after typing completes
+                                    setTimeout(() => {
+
+                                        resultContainer_7.style.opacity = '1';
+
+                                    }, 1);
+                                }
+                            }
+
+
+                            setTimeout(type_7, 1);
+
+                        }
+
+document.addEventListener('DOMContentLoaded', initializeVideo_7);
+                    </script>
+</div>
+
+<div class="comparison-wrapper" style="background: white; padding: 40px; border-radius: 20px; margin: 20px auto; max-width: 1500px;">
+                        <!-- Videos row -->
+                        <div style="display: flex; justify-content: space-between; gap: 40px; margin-bottom: 20px;">
+                            <!-- Input video -->
+                            <div style="flex: 1;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        🎬 INPUT VIDEO
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="input-video_8" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/taxi/taxi.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+
+                            <!-- Result video (hidden initially) -->
+                            <div id="result-container_8" style="flex: 1; opacity: 0; transition: opacity 1s ease;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        ✨ VFX RESULT
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="result-video_8" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/taxi/taxi_tsunami.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Typing animation centered below -->
+                        <div style="display: flex; justify-content: center; margin-top: 30px;">
+                            <div class="typewriter-input-8" style="background: #DCEFE1; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 8px 16px; min-width: 250px;">
+                                <span class="cursor_8" style="border-right: 2px solid white;">|</span>
+                            </div>
+                        </div>
+                        <style>
+
+                        @font-face {
+                            font-family: 'American Typewriter';
+                            src: url('https://fonts.cdnfonts.com/css/american-typewriter');
+                        }
+
+
+                        .typewriter-input-8  {
+                            font-family: 'American Typewriter', monospace;
+                            font-size: 1em;
+                            color: black;
+                            text-align: left;
+                        }
+
+@keyframes blink_8
+ {
+                            0%, 100% { opacity: 1; }
+                            50% { opacity: 0; }
+                        }
+
+
+                        .cursor_8  {
+
+  animation: blink_8 1s step-end infinite;
+}
+.typed-text_8
+
+     {
+                            display: inline;
+                        }
+                    </style>
+
+                    <script>
+
+                        function initializeVideo_8()
+
+{
+
+                            const text_8 = "Add a massive tsunami flooding the city, water everywhere, apocalyptic!";
+                            const typewriterInput_8 = document.querySelector('.typewriter-input-8');
+                            const cursor_8 = document.querySelector('.cursor_8');
+                            const resultContainer_8 = document.getElementById('result-container_8');
+                            let charIndex_8 = 0;
+
+                            function type_8()
+                            {
+                                if (charIndex_8 < text_8.length) {
+                                    const span = document.createElement('span');
+                                    span.className = 'typed-text_8';
+                                    span.textContent = text_8.charAt(charIndex_8);
+                                    typewriterInput_8.insertBefore(span, cursor_8);
+                                    charIndex_8++;
+                                    setTimeout(type_8, 100);
+                                    } else {// Show result after typing completes
+                                    setTimeout(() => {
+
+                                        resultContainer_8.style.opacity = '1';
+
+                                    }, 1);
+                                }
+                            }
+
+
+                            setTimeout(type_8, 1);
+
+                        }
+
+document.addEventListener('DOMContentLoaded', initializeVideo_8);
+                    </script>
+</div>
+
+<div class="comparison-wrapper" style="background: white; padding: 40px; border-radius: 20px; margin: 20px auto; max-width: 1500px;">
+                        <!-- Videos row -->
+                        <div style="display: flex; justify-content: space-between; gap: 40px; margin-bottom: 20px;">
+                            <!-- Input video -->
+                            <div style="flex: 1;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        🎬 INPUT VIDEO
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="input-video_9" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/bikers/bikers.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+
+                            <!-- Result video (hidden initially) -->
+                            <div id="result-container_9" style="flex: 1; opacity: 0; transition: opacity 1s ease;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        ✨ VFX RESULT
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="result-video_9" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/bikers/bikers_dino.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Typing animation centered below -->
+                        <div style="display: flex; justify-content: center; margin-top: 30px;">
+                            <div class="typewriter-input-9" style="background: #DCEFE1; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 8px 16px; min-width: 250px;">
+                                <span class="cursor_9" style="border-right: 2px solid white;">|</span>
+                            </div>
+                        </div>
+                        <style>
+
+                        @font-face {
+                            font-family: 'American Typewriter';
+                            src: url('https://fonts.cdnfonts.com/css/american-typewriter');
+                        }
+
+
+                        .typewriter-input-9  {
+                            font-family: 'American Typewriter', monospace;
+                            font-size: 1em;
+                            color: black;
+                            text-align: left;
+                        }
+
+@keyframes blink_9
+ {
+                            0%, 100% { opacity: 1; }
+                            50% { opacity: 0; }
+                        }
+
+
+                        .cursor_9  {
+
+  animation: blink_9 1s step-end infinite;
+}
+.typed-text_9
+
+     {
+                            display: inline;
+                        }
+                    </style>
+
+                    <script>
+
+                        function initializeVideo_9()
+
+{
+
+                            const text_9 = "Add dinosaurs eating leaves from trees, taking big bites!";
+                            const typewriterInput_9 = document.querySelector('.typewriter-input-9');
+                            const cursor_9 = document.querySelector('.cursor_9');
+                            const resultContainer_9 = document.getElementById('result-container_9');
+                            let charIndex_9 = 0;
+
+                            function type_9()
+                            {
+                                if (charIndex_9 < text_9.length) {
+                                    const span = document.createElement('span');
+                                    span.className = 'typed-text_9';
+                                    span.textContent = text_9.charAt(charIndex_9);
+                                    typewriterInput_9.insertBefore(span, cursor_9);
+                                    charIndex_9++;
+                                    setTimeout(type_9, 100);
+                                    } else {// Show result after typing completes
+                                    setTimeout(() => {
+
+                                        resultContainer_9.style.opacity = '1';
+
+                                    }, 1);
+                                }
+                            }
+
+
+                            setTimeout(type_9, 1);
+
+                        }
+
+document.addEventListener('DOMContentLoaded', initializeVideo_9);
+                    </script>
+</div>
+
+<div class="comparison-wrapper" style="background: white; padding: 40px; border-radius: 20px; margin: 20px auto; max-width: 1500px;">
+                        <!-- Videos row -->
+                        <div style="display: flex; justify-content: space-between; gap: 40px; margin-bottom: 20px;">
+                            <!-- Input video -->
+                            <div style="flex: 1;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        🎬 INPUT VIDEO
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="input-video_10" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/exotic_road/exotic_road.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+
+                            <!-- Result video (hidden initially) -->
+                            <div id="result-container_10" style="flex: 1; opacity: 0; transition: opacity 1s ease;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        ✨ VFX RESULT
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="result-video_10" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/exotic_road/exotic_road_workers.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Typing animation centered below -->
+                        <div style="display: flex; justify-content: center; margin-top: 30px;">
+                            <div class="typewriter-input-10" style="background: #DCEFE1; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 8px 16px; min-width: 250px;">
+                                <span class="cursor_10" style="border-right: 2px solid white;">|</span>
+                            </div>
+                        </div>
+                        <style>
+
+                        @font-face {
+                            font-family: 'American Typewriter';
+                            src: url('https://fonts.cdnfonts.com/css/american-typewriter');
+                        }
+
+
+                        .typewriter-input-10  {
+                            font-family: 'American Typewriter', monospace;
+                            font-size: 1em;
+                            color: black;
+                            text-align: left;
+                        }
+
+@keyframes blink_10
+ {
+                            0%, 100% { opacity: 1; }
+                            50% { opacity: 0; }
+                        }
+
+
+                        .cursor_10  {
+
+  animation: blink_10 1s step-end infinite;
+}
+.typed-text_10
+
+     {
+                            display: inline;
+                        }
+                    </style>
+
+                    <script>
+
+                        function initializeVideo_10()
+
+{
+
+                            const text_10 = "Add many workers in the rice field, cutting crops!";
+                            const typewriterInput_10 = document.querySelector('.typewriter-input-10');
+                            const cursor_10 = document.querySelector('.cursor_10');
+                            const resultContainer_10 = document.getElementById('result-container_10');
+                            let charIndex_10 = 0;
+
+                            function type_10()
+                            {
+                                if (charIndex_10 < text_10.length) {
+                                    const span = document.createElement('span');
+                                    span.className = 'typed-text_10';
+                                    span.textContent = text_10.charAt(charIndex_10);
+                                    typewriterInput_10.insertBefore(span, cursor_10);
+                                    charIndex_10++;
+                                    setTimeout(type_10, 100);
+                                    } else {// Show result after typing completes
+                                    setTimeout(() => {
+
+                                        resultContainer_10.style.opacity = '1';
+
+                                    }, 1);
+                                }
+                            }
+
+
+                            setTimeout(type_10, 1);
+
+                        }
+
+document.addEventListener('DOMContentLoaded', initializeVideo_10);
+                    </script>
+</div>
+
+<div class="comparison-wrapper" style="background: white; padding: 40px; border-radius: 20px; margin: 20px auto; max-width: 1500px;">
+                        <!-- Videos row -->
+                        <div style="display: flex; justify-content: space-between; gap: 40px; margin-bottom: 20px;">
+                            <!-- Input video -->
+                            <div style="flex: 1;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        🎬 INPUT VIDEO
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="input-video_11" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/coral/coral.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+
+                            <!-- Result video (hidden initially) -->
+                            <div id="result-container_11" style="flex: 1; opacity: 0; transition: opacity 1s ease;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        ✨ VFX RESULT
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="result-video_11" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/coral/cora_jellyfish.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Typing animation centered below -->
+                        <div style="display: flex; justify-content: center; margin-top: 30px;">
+                            <div class="typewriter-input-11" style="background: #DCEFE1; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 8px 16px; min-width: 250px;">
+                                <span class="cursor_11" style="border-right: 2px solid white;">|</span>
+                            </div>
+                        </div>
+                        <style>
+
+                        @font-face {
+                            font-family: 'American Typewriter';
+                            src: url('https://fonts.cdnfonts.com/css/american-typewriter');
+                        }
+
+
+                        .typewriter-input-11  {
+                            font-family: 'American Typewriter', monospace;
+                            font-size: 1em;
+                            color: black;
+                            text-align: left;
+                        }
+
+@keyframes blink_11
+ {
+                            0%, 100% { opacity: 1; }
+                            50% { opacity: 0; }
+                        }
+
+
+                        .cursor_11  {
+
+  animation: blink_11 1s step-end infinite;
+}
+.typed-text_11
+
+     {
+                            display: inline;
+                        }
+                    </style>
+
+                    <script>
+
+                        function initializeVideo_11()
+
+{
+
+                            const text_11 = "Add a group of jellyfish floating!";
+                            const typewriterInput_11 = document.querySelector('.typewriter-input-11');
+                            const cursor_11 = document.querySelector('.cursor_11');
+                            const resultContainer_11 = document.getElementById('result-container_11');
+                            let charIndex_11 = 0;
+
+                            function type_11()
+                            {
+                                if (charIndex_11 < text_11.length) {
+                                    const span = document.createElement('span');
+                                    span.className = 'typed-text_11';
+                                    span.textContent = text_11.charAt(charIndex_11);
+                                    typewriterInput_11.insertBefore(span, cursor_11);
+                                    charIndex_11++;
+                                    setTimeout(type_11, 100);
+                                    } else {// Show result after typing completes
+                                    setTimeout(() => {
+
+                                        resultContainer_11.style.opacity = '1';
+
+                                    }, 1);
+                                }
+                            }
+
+
+                            setTimeout(type_11, 1);
+
+                        }
+
+document.addEventListener('DOMContentLoaded', initializeVideo_11);
+                    </script>
+</div>
+
+<div class="comparison-wrapper" style="background: white; padding: 40px; border-radius: 20px; margin: 20px auto; max-width: 1500px;">
+                        <!-- Videos row -->
+                        <div style="display: flex; justify-content: space-between; gap: 40px; margin-bottom: 20px;">
+                            <!-- Input video -->
+                            <div style="flex: 1;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        🎬 INPUT VIDEO
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="input-video_12" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/tree_sunlight_2/tree_sunlight_2.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+
+                            <!-- Result video (hidden initially) -->
+                            <div id="result-container_12" style="flex: 1; opacity: 0; transition: opacity 1s ease;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        ✨ VFX RESULT
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="result-video_12" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/tree_sunlight_2/tree_sunlight_elephant.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Typing animation centered below -->
+                        <div style="display: flex; justify-content: center; margin-top: 30px;">
+                            <div class="typewriter-input-12" style="background: #DCEFE1; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 8px 16px; min-width: 250px;">
+                                <span class="cursor_12" style="border-right: 2px solid white;">|</span>
+                            </div>
+                        </div>
+                        <style>
+
+                        @font-face {
+                            font-family: 'American Typewriter';
+                            src: url('https://fonts.cdnfonts.com/css/american-typewriter');
+                        }
+
+
+                        .typewriter-input-12  {
+                            font-family: 'American Typewriter', monospace;
+                            font-size: 1em;
+                            color: black;
+                            text-align: left;
+                        }
+
+@keyframes blink_12
+ {
+                            0%, 100% { opacity: 1; }
+                            50% { opacity: 0; }
+                        }
+
+
+                        .cursor_12  {
+
+  animation: blink_12 1s step-end infinite;
+}
+.typed-text_12
+
+     {
+                            display: inline;
+                        }
+                    </style>
+
+                    <script>
+
+                        function initializeVideo_12()
+
+{
+
+                            const text_12 = "Add a elephant walking!";
+                            const typewriterInput_12 = document.querySelector('.typewriter-input-12');
+                            const cursor_12 = document.querySelector('.cursor_12');
+                            const resultContainer_12 = document.getElementById('result-container_12');
+                            let charIndex_12 = 0;
+
+                            function type_12()
+                            {
+                                if (charIndex_12 < text_12.length) {
+                                    const span = document.createElement('span');
+                                    span.className = 'typed-text_12';
+                                    span.textContent = text_12.charAt(charIndex_12);
+                                    typewriterInput_12.insertBefore(span, cursor_12);
+                                    charIndex_12++;
+                                    setTimeout(type_12, 100);
+                                    } else {// Show result after typing completes
+                                    setTimeout(() => {
+
+                                        resultContainer_12.style.opacity = '1';
+
+                                    }, 1);
+                                }
+                            }
+
+
+                            setTimeout(type_12, 1);
+
+                        }
+
+document.addEventListener('DOMContentLoaded', initializeVideo_12);
+                    </script>
+</div>
+
+<div class="comparison-wrapper" style="background: white; padding: 40px; border-radius: 20px; margin: 20px auto; max-width: 1500px;">
+                        <!-- Videos row -->
+                        <div style="display: flex; justify-content: space-between; gap: 40px; margin-bottom: 20px;">
+                            <!-- Input video -->
+                            <div style="flex: 1;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        🎬 INPUT VIDEO
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="input-video_13" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/girl_living_room/girl_living_room.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+
+                            <!-- Result video (hidden initially) -->
+                            <div id="result-container_13" style="flex: 1; opacity: 0; transition: opacity 1s ease;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        ✨ VFX RESULT
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="result-video_13" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/girl_living_room/girl_living_room_bear.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Typing animation centered below -->
+                        <div style="display: flex; justify-content: center; margin-top: 30px;">
+                            <div class="typewriter-input-13" style="background: #DCEFE1; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 8px 16px; min-width: 250px;">
+                                <span class="cursor_13" style="border-right: 2px solid white;">|</span>
+                            </div>
+                        </div>
+                        <style>
+
+                        @font-face {
+                            font-family: 'American Typewriter';
+                            src: url('https://fonts.cdnfonts.com/css/american-typewriter');
+                        }
+
+
+                        .typewriter-input-13  {
+                            font-family: 'American Typewriter', monospace;
+                            font-size: 1em;
+                            color: black;
+                            text-align: left;
+                        }
+
+@keyframes blink_13
+ {
+                            0%, 100% { opacity: 1; }
+                            50% { opacity: 0; }
+                        }
+
+
+                        .cursor_13  {
+
+  animation: blink_13 1s step-end infinite;
+}
+.typed-text_13
+
+     {
+                            display: inline;
+                        }
+                    </style>
+
+                    <script>
+
+                        function initializeVideo_13()
+
+{
+
+                            const text_13 = "Add a bear dancing with the woman!";
+                            const typewriterInput_13 = document.querySelector('.typewriter-input-13');
+                            const cursor_13 = document.querySelector('.cursor_13');
+                            const resultContainer_13 = document.getElementById('result-container_13');
+                            let charIndex_13 = 0;
+
+                            function type_13()
+                            {
+                                if (charIndex_13 < text_13.length) {
+                                    const span = document.createElement('span');
+                                    span.className = 'typed-text_13';
+                                    span.textContent = text_13.charAt(charIndex_13);
+                                    typewriterInput_13.insertBefore(span, cursor_13);
+                                    charIndex_13++;
+                                    setTimeout(type_13, 100);
+                                    } else {// Show result after typing completes
+                                    setTimeout(() => {
+
+                                        resultContainer_13.style.opacity = '1';
+
+                                    }, 1);
+                                }
+                            }
+
+
+                            setTimeout(type_13, 1);
+
+                        }
+
+document.addEventListener('DOMContentLoaded', initializeVideo_13);
+                    </script>
+</div>
+
+<div class="comparison-wrapper" style="background: white; padding: 40px; border-radius: 20px; margin: 20px auto; max-width: 1500px;">
+                        <!-- Videos row -->
+                        <div style="display: flex; justify-content: space-between; gap: 40px; margin-bottom: 20px;">
+                            <!-- Input video -->
+                            <div style="flex: 1;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        🎬 INPUT VIDEO
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="input-video_14" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/girl_beach/girl_beach.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+
+                            <!-- Result video (hidden initially) -->
+                            <div id="result-container_14" style="flex: 1; opacity: 0; transition: opacity 1s ease;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <span style="font-weight: 500; font-size: 1.1em;">
+                                        ✨ VFX RESULT
+                                    </span>
+                                </div>
+                                <div style="border-radius: 12px; overflow: hidden; background: black;">
+                                    <video id="result-video_14" autoplay loop muted playsinline style="width: 100%; display: block;">
+                                        <source src="sm/assets/results/girl_beach/beach_dog.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Typing animation centered below -->
+                        <div style="display: flex; justify-content: center; margin-top: 30px;">
+                            <div class="typewriter-input-14" style="background: #DCEFE1; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 8px 16px; min-width: 250px;">
+                                <span class="cursor_14" style="border-right: 2px solid white;">|</span>
+                            </div>
+                        </div>
+                        <style>
+
+                        @font-face {
+                            font-family: 'American Typewriter';
+                            src: url('https://fonts.cdnfonts.com/css/american-typewriter');
+                        }
+
+
+                        .typewriter-input-14  {
+                            font-family: 'American Typewriter', monospace;
+                            font-size: 1em;
+                            color: black;
+                            text-align: left;
+                        }
+
+@keyframes blink_14
+ {
+                            0%, 100% { opacity: 1; }
+                            50% { opacity: 0; }
+                        }
+
+
+                        .cursor_14  {
+
+  animation: blink_14 1s step-end infinite;
+}
+.typed-text_14
+
+     {
+                            display: inline;
+                        }
+                    </style>
+
+                    <script>
+
+                        function initializeVideo_14()
+
+{
+
+                            const text_14 = "Add a puppy running beside the woman!";
+                            const typewriterInput_14 = document.querySelector('.typewriter-input-14');
+                            const cursor_14 = document.querySelector('.cursor_14');
+                            const resultContainer_14 = document.getElementById('result-container_14');
+                            let charIndex_14 = 0;
+
+                            function type_14()
+                            {
+                                if (charIndex_14 < text_14.length) {
+                                    const span = document.createElement('span');
+                                    span.className = 'typed-text_14';
+                                    span.textContent = text_14.charAt(charIndex_14);
+                                    typewriterInput_14.insertBefore(span, cursor_14);
+                                    charIndex_14++;
+                                    setTimeout(type_14, 100);
+                                    } else {// Show result after typing completes
+                                    setTimeout(() => {
+
+                                        resultContainer_14.style.opacity = '1';
+
+                                    }, 1);
+                                }
+                            }
+
+
+                            setTimeout(type_14, 1);
+
+                        }
+
+document.addEventListener('DOMContentLoaded', initializeVideo_14);
+                    </script>
+</div>
+
+
+        </div>
+    </div>
+</div>
+</div>
+</section>
+
+
+    <!-- Method section -->
+    <section class="section hero is-light" style="align-content: center;">
+         <div class="container is-max-desktop is-centered has-text-centered">
+      <h2 class="title is-3">Method</h2>
+      <div class="content has-text-justified is-centered">
+        <br />
+
+Given an input video $\mathbf{V}_{orig}$ and a textual instruction $\mathbf{P}_{VFX}$, our goal is to synthesize a new video $\mathbf{V}_{VFX}$, in which new dynamic elements are seamlessly integrated to the existing scene. <br>
+Tackling this task requires ensuring that the generated content, such as new objects or effects, adheres to the dynamics of the existing scene. The location and size of the new content must align with the camera motion and the environment, while its actions and movements must appropriately respond to other dynamic objects present in the scene. Our framework addresses these challenges by incorporating the following key components: <br>
+<strong> VLM as a VFX assistant</strong> - We incorporate a Vision-Language model that we treat as ''a VFX assistant'' to interpret the user’s instructions, reason about the interactions with the scene's dynamics, and provide a descriptive prompt for the T2V based diffusion model. <br>
+<strong> Localization via Anchor Extended Attention</strong> - To steer the localization of the edit and make it content-aware, we propose to utilize Extended Attention during sampling from the T2V DiT model to a selection of keys and values corresponding to only specific positions in the original video that act as anchors points, allowing the generation to focus on essential elements for integration. localization is based on our observation that extending keys and values provides more than just global information, but each feature locally encodes corresponding patches in the video. regions<br>
+<strong> Content Harmonization via Iterative refinement</strong> - To guarantee precise pixel-level alignment we estimate a residual in the latent, which is added to the latent of the original video. We iteratively update the estimated residual latent by repeating the sampling process with AnchorExtAttn multiple times, progressively reducing the level of noise added at each step.<br>
+
+                            <br>
+                            <br>
+
+                            <br>
+                            <br>
+                  <img src="sm/assets/pics/pipeline.png" alt="pipeline" width="100%">
+
+
+          Given an input video $\mathbf{V}_{orig}$, we apply DDIM inversion and extract spatiotemporal keys and values $[\mathbf{K}_{orig}, \mathbf{V}_{orig}]$ from the original noisy latents. Given the user instruction $\mathbf{P}_{VFX}$ we instruct the VLM to envision the augmented scene and output the text edit prompt $\mathbf{P}_{comp}$, prominent object descriptions $\mathbf{O}_{orig}$ that are used to mask out the extracted keys and values and target object descriptions $\mathbf{O}_{edit}$. We estimate a residual ${x}_{res}$ to the original video latent ${x}_{{orig}}$. This is done by iteratively applying SDEdit with our Anchor Extended Attention, segmenting the target objects $(\mathbf{O}_{edit})$ from the clean result, and updating ${x}_{res}$ accordingly.
+
+
+                            <br>
+                            <br>
+
+                        </div>
+                </div>
+    </section>
+
+<!--       &lt;!&ndash;BibTex citation &ndash;&gt;-->
+<!--<section class="section" id="BibTeX">-->
+<!--    <div class="container is-max-desktop content">-->
+<!--      <h2 class="title">BibTeX</h2>-->
+<!--      <pre><code>@misc{yatim2025dynvfx,-->
+<!--    title={DynVFX: Augmenting Real Videos with Dynamic Content},-->
+<!--    author={Danah Yatim and Rafail Fridman and Omer Bar-Tal and Tali Dekel},-->
+<!--    year={2025},-->
+<!--    eprint={2502.03621},-->
+<!--    archivePrefix={arXiv},-->
+<!--    primaryClass={cs.CV}-->
+<!--}</code></pre>-->
+<!--    </div>-->
+<!--</section>-->
+<!--End BibTex citation -->
+
+
+                
+       </body>
+      
+       </html>
+      

@@ -1,0 +1,804 @@
+
+        <link href="https://fonts.cdnfonts.com/css/chalkduster" rel="stylesheet">
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/chalkduster');
+    </style>
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>DynVFX: Augmenting Real Videos with Dynamic Content.</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <button style="position: fixed;right: 15px;top:  50%;height: 100px;width: 140px; font-size: 20px;" type="button"><a href="#top">Back to top</a></button>
+    <div class="page-container">
+      <h1 align="center">DynVFX: Augmenting Real Videos with Dynamic Content</h1>
+      <!-- <h2 align="center">Paper ID #</h2> -->
+      <h2 align="center">Supplementary Material</h2>
+
+      <p align="center">&nbsp;</p>
+        <a href="#top"></a>
+      <ul>
+        <li><a href="#our_results_container">Our Results (Section 5 and Figure 8)</a></li>
+        <li><a href="#comparisons_baselines_container">Comparisons to Baselines (Section 5.1 and Figure 5)</a></li>
+        <li><a href="#Ablations">Ablations (Section 5.2 and Figure 4)</a></li>
+        <li><a href="#Analysis">Extended Attention Analysis (Section 4.1 and Figure 3)</a></li>
+        <li><a href="#Limitations">Limitations (Section 6 and Figure 7)</a></li>
+      </ul>
+
+      <a href="supplementary.pdf">Click here to open the SM PDF</a>
+
+      <p><br><span class="emph">Press the spacebar to pause all videos simultaneously.</span></p>
+
+      <!------------------ BEGIN SECTION ------------------>
+
+      <p>&nbsp;</p>
+      <hr>
+
+      <h2 align="left" id="our_results_container">Our Results</h2>
+
+    
+    <p align="left">
+    We present sample results of our method, part of which are shown in Fig.4 in the paper.
+    </p>
+      <br/>
+
+    <table width="1600" align="center", margin: 0 auto; table-layout: fixed;>
+    <tbody>
+    
+    <table style="width: 100%; border-collapse: collapse; margin: 20px auto;">
+        <tr>
+            <th style="font-size: 16px; padding: 10px; text-align: center; width: 50%;">Original video</th>
+    
+            <th style="font-family: Chalkduster; padding: 10px; text-align: center; width: 50%;">A majestic whale in the background</th>
+        
+        </tr>
+        <tr>
+    
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/scuba/scuba.mp4" autoplay loop controls muted/>
+            </td>
+        
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/scuba/scuba_whale.mp4" autoplay loop controls muted/>
+            </td>
+        
+        </tr>
+    </table>
+    
+    <table style="width: 100%; border-collapse: collapse; margin: 20px auto;">
+        <tr>
+            <th style="font-size: 16px; padding: 10px; text-align: center; width: 50%;">Original video</th>
+    
+            <th style="font-family: Chalkduster; padding: 10px; text-align: center; width: 50%;">A puppy peaking its head out of the box</th>
+        
+        </tr>
+        <tr>
+    
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/box/box.mp4" autoplay loop controls muted/>
+            </td>
+        
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/box/box_puppy.mp4" autoplay loop controls muted/>
+            </td>
+        
+        </tr>
+    </table>
+    
+    <table style="width: 100%; border-collapse: collapse; margin: 20px auto;">
+        <tr>
+            <th style="font-size: 16px; padding: 10px; text-align: center; width: 50%;">Original video</th>
+    
+            <th style="font-family: Chalkduster; padding: 10px; text-align: center; width: 50%;">A majestic knight rides the horse</th>
+        
+        </tr>
+        <tr>
+    
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/horse/horse.mp4" autoplay loop controls muted/>
+            </td>
+        
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/horse/horse_knight.mp4" autoplay loop controls muted/>
+            </td>
+        
+        </tr>
+    </table>
+    
+    <table style="width: 100%; border-collapse: collapse; margin: 20px auto;">
+        <tr>
+            <th style="font-size: 16px; padding: 10px; text-align: center; width: 50%;">Original video</th>
+    
+            <th style="font-family: Chalkduster; padding: 10px; text-align: center; width: 50%;">A massive tsunami flooding the city, water everywhere, apocalyptic</th>
+        
+        </tr>
+        <tr>
+    
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/taxi/taxi.mp4" autoplay loop controls muted/>
+            </td>
+        
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/taxi/taxi_tsunami.mp4" autoplay loop controls muted/>
+            </td>
+        
+        </tr>
+    </table>
+    
+    <table style="width: 100%; border-collapse: collapse; margin: 20px auto;">
+        <tr>
+            <th style="font-size: 16px; padding: 10px; text-align: center; width: 50%;">Original video</th>
+    
+            <th style="font-family: Chalkduster; padding: 10px; text-align: center; width: 50%;">A playful golden retriever swimming trying to catch up with the joggers</th>
+        
+        </tr>
+        <tr>
+    
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/jogging_river/jogging_river.mp4" autoplay loop controls muted/>
+            </td>
+        
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/jogging_river/jogging_river_golden.mp4" autoplay loop controls muted/>
+            </td>
+        
+        </tr>
+    </table>
+    
+    <table style="width: 100%; border-collapse: collapse; margin: 20px auto;">
+        <tr>
+            <th style="font-size: 16px; padding: 10px; text-align: center; width: 50%;">Original video</th>
+    
+            <th style="font-family: Chalkduster; padding: 10px; text-align: center; width: 50%;">dinosaurs eating leaves from trees, taking big bites</th>
+        
+        </tr>
+        <tr>
+    
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/bikers/bikers.mp4" autoplay loop controls muted/>
+            </td>
+        
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/bikers/bikers_dino.mp4" autoplay loop controls muted/>
+            </td>
+        
+        </tr>
+    </table>
+    
+    <table style="width: 100%; border-collapse: collapse; margin: 20px auto;">
+        <tr>
+            <th style="font-size: 16px; padding: 10px; text-align: center; width: 50%;">Original video</th>
+    
+            <th style="font-family: Chalkduster; padding: 10px; text-align: center; width: 50%;">massive explosion from the mountain</th>
+        
+        </tr>
+        <tr>
+    
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/cycle_view/cycle_view.mp4" autoplay loop controls muted/>
+            </td>
+        
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/cycle_view/cycle_view_explosion.mp4" autoplay loop controls muted/>
+            </td>
+        
+        </tr>
+    </table>
+    
+    <table style="width: 100%; border-collapse: collapse; margin: 20px auto;">
+        <tr>
+            <th style="font-size: 16px; padding: 10px; text-align: center; width: 50%;">Original video</th>
+    
+            <th style="font-family: Chalkduster; padding: 10px; text-align: center; width: 50%;">Many workers in the rice field, cutting crops</th>
+        
+        </tr>
+        <tr>
+    
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/exotic_road/exotic_road.mp4" autoplay loop controls muted/>
+            </td>
+        
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/exotic_road/exotic_road_workers.mp4" autoplay loop controls muted/>
+            </td>
+        
+        </tr>
+    </table>
+    
+    <table style="width: 100%; border-collapse: collapse; margin: 20px auto;">
+        <tr>
+            <th style="font-size: 16px; padding: 10px; text-align: center; width: 50%;">Original video</th>
+    
+            <th style="font-family: Chalkduster; padding: 10px; text-align: center; width: 50%;">A group of jellyfish floating</th>
+        
+        </tr>
+        <tr>
+    
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/coral/coral.mp4" autoplay loop controls muted/>
+            </td>
+        
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/coral/cora_jellyfish.mp4" autoplay loop controls muted/>
+            </td>
+        
+        </tr>
+    </table>
+    
+    <table style="width: 100%; border-collapse: collapse; margin: 20px auto;">
+        <tr>
+            <th style="font-size: 16px; padding: 10px; text-align: center; width: 50%;">Original video</th>
+    
+            <th style="font-family: Chalkduster; padding: 10px; text-align: center; width: 50%;">A giraffe walking</th>
+        
+        </tr>
+        <tr>
+    
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/tree_sunlight/tree_sunlight.mp4" autoplay loop controls muted/>
+            </td>
+        
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/tree_sunlight/tree_sunlight_giraffe.mp4" autoplay loop controls muted/>
+            </td>
+        
+        </tr>
+    </table>
+    
+    <table style="width: 100%; border-collapse: collapse; margin: 20px auto;">
+        <tr>
+            <th style="font-size: 16px; padding: 10px; text-align: center; width: 50%;">Original video</th>
+    
+            <th style="font-family: Chalkduster; padding: 10px; text-align: center; width: 50%;">A elephant walking</th>
+        
+        </tr>
+        <tr>
+    
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/tree_sunlight_2/tree_sunlight_2.mp4" autoplay loop controls muted/>
+            </td>
+        
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/tree_sunlight_2/tree_sunlight_elephant.mp4" autoplay loop controls muted/>
+            </td>
+        
+        </tr>
+    </table>
+    
+    <table style="width: 100%; border-collapse: collapse; margin: 20px auto;">
+        <tr>
+            <th style="font-size: 16px; padding: 10px; text-align: center; width: 50%;">Original video</th>
+    
+            <th style="font-family: Chalkduster; padding: 10px; text-align: center; width: 50%;">Balloons bouncing and swaying, surrounding the woman. Many, colorful.</th>
+        
+        </tr>
+        <tr>
+    
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/girl_living_room/girl_living_room.mp4" autoplay loop controls muted/>
+            </td>
+        
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/girl_living_room/girl_living_room_balloons.mp4" autoplay loop controls muted/>
+            </td>
+        
+        </tr>
+    </table>
+    
+    <table style="width: 100%; border-collapse: collapse; margin: 20px auto;">
+        <tr>
+            <th style="font-size: 16px; padding: 10px; text-align: center; width: 50%;">Original video</th>
+    
+            <th style="font-family: Chalkduster; padding: 10px; text-align: center; width: 50%;">A puppy running beside the woman</th>
+        
+        </tr>
+        <tr>
+    
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/girl_beach/girl_beach.mp4" autoplay loop controls muted/>
+            </td>
+        
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/results/girl_beach/beach_dog.mp4" autoplay loop controls muted/>
+            </td>
+        
+        </tr>
+    </table>
+    
+        </tbody>
+        </table>
+
+        <p>&nbsp;</p>
+          <hr>
+
+          <h2 id="comparisons_baselines_container" align="left"><a name="image-results" id="image-results"></a>Comparisons to Baselines</h2>
+          <p align="left"> Existing methods are incapable of maintaining scene fidelity while introducing new content.
+
+            Our method successfully adds new content to the scene, achieving high fidelity to the user instructions.while allowing for natural interactions between original and added elements in a realistic and seamless manner
+            </p>
+      <br/>
+
+    
+                <table  width="1600" align="center, margin: 0 auto; table-layout: fixed;">
+                
+    <table style="width: 100%; table-layout: fixed; border-collapse: collapse; margin: 0; border-spacing: 0; background-color: #1a1a1a;">
+        <tr>
+    
+            <th style="font-family: Chalkduster; width: 33.333333333333336%; padding: 5px; text-align: center;
+                font-size: 16px; color: white;">A bear dancing with the woman</th>
+        
+            <th style="font-family: system-ui; width: 33.333333333333336%; padding: 5px; text-align: center;
+                font-size: 16px; color: white;">Ours</th>
+        
+            <th style="font-family: system-ui; width: 33.333333333333336%; padding: 5px; text-align: center;
+                font-size: 16px; color: white;">Finetuning</th>
+        
+        </tr>
+        <tr>
+    
+            <td style="padding: 0; text-align: center;">
+                <video width="540.0" height="360.0" style="width: 100%; display: block; margin: 0;"
+                    src="assets/comparisons/girl_living_room/original.mp4" autoplay loop controls muted />
+            </td>
+        
+            <td style="padding: 0; text-align: center;">
+                <video width="540.0" height="360.0" style="width: 100%; display: block; margin: 0;"
+                    src="assets/comparisons/girl_living_room/ours.mp4" autoplay loop controls muted />
+            </td>
+        
+            <td style="padding: 0; text-align: center;">
+                <video width="540.0" height="360.0" style="width: 100%; display: block; margin: 0;"
+                    src="assets/comparisons/girl_living_room/lora.mp4" autoplay loop controls muted />
+            </td>
+        
+        </tr>
+    </table>
+    
+    <table style="width: 100%; table-layout: fixed; border-collapse: collapse; margin: 0; border-spacing: 0; background-color: #1a1a1a;">
+        <tr>
+    
+            <th style="font-family: system-ui; width: 33.333333333333336%; padding: 5px; text-align: center;
+                font-size: 16px; color: white;">SDEdit</th>
+        
+            <th style="font-family: system-ui; width: 33.333333333333336%; padding: 5px; text-align: center;
+                font-size: 16px; color: white;">Gen-3</th>
+        
+            <th style="font-family: system-ui; width: 33.333333333333336%; padding: 5px; text-align: center;
+                font-size: 16px; color: white;">DDIM Inversion</th>
+        
+        </tr>
+        <tr>
+    
+            <td style="padding: 0; text-align: center;">
+                <video width="540.0" height="360.0" style="width: 100%; display: block; margin: 0;"
+                    src="assets/comparisons/girl_living_room/sdedit.mp4" autoplay loop controls muted />
+            </td>
+        
+            <td style="padding: 0; text-align: center;">
+                <video width="540.0" height="360.0" style="width: 100%; display: block; margin: 0;"
+                    src="assets/comparisons/girl_living_room/gen.mp4" autoplay loop controls muted />
+            </td>
+        
+            <td style="padding: 0; text-align: center;">
+                <video width="540.0" height="360.0" style="width: 100%; display: block; margin: 0;"
+                    src="assets/comparisons/girl_living_room/sample_from_invert.mp4" autoplay loop controls muted />
+            </td>
+        
+        </tr>
+    </table>
+    
+        <tr>
+            </table>
+            <p>&nbsp;</p>
+            <hr>
+            </td>
+        
+                <table  width="1600" align="center, margin: 0 auto; table-layout: fixed;">
+                
+    <table style="width: 100%; table-layout: fixed; border-collapse: collapse; margin: 0; border-spacing: 0; background-color: #1a1a1a;">
+        <tr>
+    
+            <th style="font-family: Chalkduster; width: 33.333333333333336%; padding: 5px; text-align: center;
+                font-size: 16px; color: white;">A fire breathing dragon chasing the dog</th>
+        
+            <th style="font-family: system-ui; width: 33.333333333333336%; padding: 5px; text-align: center;
+                font-size: 16px; color: white;">Ours</th>
+        
+            <th style="font-family: system-ui; width: 33.333333333333336%; padding: 5px; text-align: center;
+                font-size: 16px; color: white;">Finetuning</th>
+        
+        </tr>
+        <tr>
+    
+            <td style="padding: 0; text-align: center;">
+                <video width="540.0" height="360.0" style="width: 100%; display: block; margin: 0;"
+                    src="assets/comparisons/beagle/original.mp4" autoplay loop controls muted />
+            </td>
+        
+            <td style="padding: 0; text-align: center;">
+                <video width="540.0" height="360.0" style="width: 100%; display: block; margin: 0;"
+                    src="assets/comparisons/beagle/ours.mp4" autoplay loop controls muted />
+            </td>
+        
+            <td style="padding: 0; text-align: center;">
+                <video width="540.0" height="360.0" style="width: 100%; display: block; margin: 0;"
+                    src="assets/comparisons/beagle/lora.mp4" autoplay loop controls muted />
+            </td>
+        
+        </tr>
+    </table>
+    
+    <table style="width: 100%; table-layout: fixed; border-collapse: collapse; margin: 0; border-spacing: 0; background-color: #1a1a1a;">
+        <tr>
+    
+            <th style="font-family: system-ui; width: 33.333333333333336%; padding: 5px; text-align: center;
+                font-size: 16px; color: white;">SDEdit</th>
+        
+            <th style="font-family: system-ui; width: 33.333333333333336%; padding: 5px; text-align: center;
+                font-size: 16px; color: white;">Gen-3</th>
+        
+            <th style="font-family: system-ui; width: 33.333333333333336%; padding: 5px; text-align: center;
+                font-size: 16px; color: white;">DDIM Inversion</th>
+        
+        </tr>
+        <tr>
+    
+            <td style="padding: 0; text-align: center;">
+                <video width="540.0" height="360.0" style="width: 100%; display: block; margin: 0;"
+                    src="assets/comparisons/beagle/sdedit.mp4" autoplay loop controls muted />
+            </td>
+        
+            <td style="padding: 0; text-align: center;">
+                <video width="540.0" height="360.0" style="width: 100%; display: block; margin: 0;"
+                    src="assets/comparisons/beagle/gen.mp4" autoplay loop controls muted />
+            </td>
+        
+            <td style="padding: 0; text-align: center;">
+                <video width="540.0" height="360.0" style="width: 100%; display: block; margin: 0;"
+                    src="assets/comparisons/beagle/sample_from_invert.mp4" autoplay loop controls muted />
+            </td>
+        
+        </tr>
+    </table>
+    
+        <tr>
+            </table>
+            <p>&nbsp;</p>
+            <hr>
+            </td>
+        
+                <table  width="1600" align="center, margin: 0 auto; table-layout: fixed;">
+                
+    <table style="width: 100%; table-layout: fixed; border-collapse: collapse; margin: 0; border-spacing: 0; background-color: #1a1a1a;">
+        <tr>
+    
+            <th style="font-family: Chalkduster; width: 33.333333333333336%; padding: 5px; text-align: center;
+                font-size: 16px; color: white;">A pair of deer drinking water from the creek</th>
+        
+            <th style="font-family: system-ui; width: 33.333333333333336%; padding: 5px; text-align: center;
+                font-size: 16px; color: white;">Ours</th>
+        
+            <th style="font-family: system-ui; width: 33.333333333333336%; padding: 5px; text-align: center;
+                font-size: 16px; color: white;">Finetuning</th>
+        
+        </tr>
+        <tr>
+    
+            <td style="padding: 0; text-align: center;">
+                <video width="540.0" height="360.0" style="width: 100%; display: block; margin: 0;"
+                    src="assets/comparisons/creek/original.mp4" autoplay loop controls muted />
+            </td>
+        
+            <td style="padding: 0; text-align: center;">
+                <video width="540.0" height="360.0" style="width: 100%; display: block; margin: 0;"
+                    src="assets/comparisons/creek/ours.mp4" autoplay loop controls muted />
+            </td>
+        
+            <td style="padding: 0; text-align: center;">
+                <video width="540.0" height="360.0" style="width: 100%; display: block; margin: 0;"
+                    src="assets/comparisons/creek/lora.mp4" autoplay loop controls muted />
+            </td>
+        
+        </tr>
+    </table>
+    
+    <table style="width: 100%; table-layout: fixed; border-collapse: collapse; margin: 0; border-spacing: 0; background-color: #1a1a1a;">
+        <tr>
+    
+            <th style="font-family: system-ui; width: 33.333333333333336%; padding: 5px; text-align: center;
+                font-size: 16px; color: white;">SDEdit</th>
+        
+            <th style="font-family: system-ui; width: 33.333333333333336%; padding: 5px; text-align: center;
+                font-size: 16px; color: white;">Gen-3</th>
+        
+            <th style="font-family: system-ui; width: 33.333333333333336%; padding: 5px; text-align: center;
+                font-size: 16px; color: white;">DDIM Inversion</th>
+        
+        </tr>
+        <tr>
+    
+            <td style="padding: 0; text-align: center;">
+                <video width="540.0" height="360.0" style="width: 100%; display: block; margin: 0;"
+                    src="assets/comparisons/creek/sdedit.mp4" autoplay loop controls muted />
+            </td>
+        
+            <td style="padding: 0; text-align: center;">
+                <video width="540.0" height="360.0" style="width: 100%; display: block; margin: 0;"
+                    src="assets/comparisons/creek/gen.mp4" autoplay loop controls muted />
+            </td>
+        
+            <td style="padding: 0; text-align: center;">
+                <video width="540.0" height="360.0" style="width: 100%; display: block; margin: 0;"
+                    src="assets/comparisons/creek/sample_from_invert.mp4" autoplay loop controls muted />
+            </td>
+        
+        </tr>
+    </table>
+    
+        <tr>
+            </table>
+            <p>&nbsp;</p>
+            <hr>
+            </td>
+        
+    <h2 id="Ablations" align="left"><a name="image-results" id="image-results"></a>Ablations</h2>
+    <p align="left"> Ablations. (b) Excluding both AnchorExtAttn and the Iterative refinement process results in significant misalignment with the original scene and poor harmonization (e.g., size of the puppy relative to the scene and boundary artifacts). (c) Omitting AnchorExtAttn leads to incorrect positioning of the new content. (d) Removing iterative refinement results in poor harmonization. Our full method (e) exhibits good localization and harmonization of the edit.
+    </p>
+    <br/>
+
+    <table  width="1200" align="center">
+    <tbody>
+    
+                <table  width="800" align="center">
+                
+    <table style="width: 100%; table-layout: fixed; border-collapse: collapse; margin: 0; border-spacing: 0; background-color: #1a1a1a;">
+        <tr>
+            <th style="font-family: Chalkduster; width: 33%; padding: 5px; text-align: center; color: white;">
+                A puppy peaking its head out of the box
+            </th>
+            <th style="width: 33%; padding: 5px; text-align: center; color: white;">w/o AnchrExtAttn. and Iter. Refin.</th>
+            <th style="width: 33%; padding: 5px; text-align: center; color: white;">w/o AnchrExtAttn.</th>
+        </tr>
+        <tr>
+            <td style="padding: 0;">
+                <video width="384" height="213" style="width: 100%;" src="assets/ablations/box/original.mp4" autoplay loop controls muted></video>
+            </td>
+            <td style="padding: 0;">
+                <video width="384" height="213" style="width: 100%;" src="assets/ablations/box/no_anch_no_iter.mp4" autoplay loop controls muted></video>
+            </td>
+            <td style="padding: 0;">
+                <video width="384" height="213" style="width: 100%;" src="assets/ablations/box/no_anch.mp4" autoplay loop controls muted></video>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="width: 33%; padding: 5px; text-align: center; color: white;">w/o Iter Refin.</td>
+            <td style="width: 33%; padding: 5px; text-align: center; color: white;">Our method</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="padding: 0;">
+                <video width="384" height="213" style="width: 100%;" src="assets/ablations/box/no_iter.mp4" autoplay loop controls muted></video>
+            </td>
+            <td style="padding: 0;">
+                <video width="384" height="213" style="width: 100%;" src="assets/ablations/box/ours.mp4" autoplay loop controls muted></video>
+            </td>
+        </tr>
+    </table>
+    
+        <tr>
+            </table>
+            <p>&nbsp;</p>
+            <hr>
+            </td>
+        
+                <table  width="800" align="center">
+                
+    <table style="width: 100%; table-layout: fixed; border-collapse: collapse; margin: 0; border-spacing: 0; background-color: #1a1a1a;">
+        <tr>
+            <th style="font-family: Chalkduster; width: 33%; padding: 5px; text-align: center; color: white;">
+                A massive tsunami flooding the city
+            </th>
+            <th style="width: 33%; padding: 5px; text-align: center; color: white;">w/o AnchrExtAttn. and Iter. Refin.</th>
+            <th style="width: 33%; padding: 5px; text-align: center; color: white;">w/o AnchrExtAttn.</th>
+        </tr>
+        <tr>
+            <td style="padding: 0;">
+                <video width="384" height="213" style="width: 100%;" src="assets/ablations/taxi/original.mp4" autoplay loop controls muted></video>
+            </td>
+            <td style="padding: 0;">
+                <video width="384" height="213" style="width: 100%;" src="assets/ablations/taxi/no_anch_no_iter.mp4" autoplay loop controls muted></video>
+            </td>
+            <td style="padding: 0;">
+                <video width="384" height="213" style="width: 100%;" src="assets/ablations/taxi/no_anch.mp4" autoplay loop controls muted></video>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="width: 33%; padding: 5px; text-align: center; color: white;">w/o Iter Refin.</td>
+            <td style="width: 33%; padding: 5px; text-align: center; color: white;">Our method</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="padding: 0;">
+                <video width="384" height="213" style="width: 100%;" src="assets/ablations/taxi/no_iter.mp4" autoplay loop controls muted></video>
+            </td>
+            <td style="padding: 0;">
+                <video width="384" height="213" style="width: 100%;" src="assets/ablations/taxi/ours.mp4" autoplay loop controls muted></video>
+            </td>
+        </tr>
+    </table>
+    
+        <tr>
+            </table>
+            <p>&nbsp;</p>
+            <hr>
+            </td>
+        
+    <h2 id="Analysis" align="left"><a name="image-results" id="image-results"></a>Extended Attention Analysis</h2>
+    <p align="left"> Controlling fidelity to the original scene using different extended attention mechanisms. </p>
+    <p align="left">(a-b) SDEdit suffers from the original scene preservation/edit
+fidelity trade-off. (c-e) Three Extended Attention variants during sampling demonstrate different control levels: Full Extended Attention closely reconstructs
+the input scene, Masked Extended Attention proves too constrained in overlapping regions despite allowing new content emergence, and our Anchor Ext. Attn.
+achieves optimal results by applying dropout – extending attention only at sparse points within selected regions.. </p>
+    <br/>
+
+    <table  width="1200" align="center">
+    <tbody>
+    
+                <table  width="800" align="center">
+                
+    <table style="width: 100%; table-layout: fixed; border-collapse: collapse; margin: 0; border-spacing: 0; background-color: #1a1a1a;">
+        <tr>
+    
+            <td style="width: 25%; padding: 5px; text-align: center; font-family: Chalkduster; color: white; font-size: 16px;">A knight riding a horse</td>
+        
+            <td style="width: 25%; padding: 5px; text-align: center; font-family: system-ui; color: white; font-size: 16px;">Sampling T=0.9</td>
+        
+            <td style="width: 25%; padding: 5px; text-align: center; font-family: system-ui; color: white; font-size: 16px;">Sampling T=0.6</td>
+        
+            <td style="width: 25%; padding: 5px; text-align: center; font-family: system-ui; color: white; font-size: 16px;">Our method</td>
+        
+        </tr>
+        <tr>
+    
+            <td style="padding: 0;">
+                <video width="384" height="213" style="width: 100%;" src="assets/analysis/horse/original.mp4" autoplay loop controls muted></video>
+            </td>
+        
+            <td style="padding: 0;">
+                <video width="384" height="213" style="width: 100%;" src="assets/analysis/horse/sdedit_0.9.mp4" autoplay loop controls muted></video>
+            </td>
+        
+            <td style="padding: 0;">
+                <video width="384" height="213" style="width: 100%;" src="assets/analysis/horse/sdedit_0.6.mp4" autoplay loop controls muted></video>
+            </td>
+        
+            <td style="padding: 0;">
+                <video width="384" height="213" style="width: 100%;" src="assets/analysis/horse/ours.mp4" autoplay loop controls muted></video>
+            </td>
+        
+        </tr>
+        <tr>
+    <td></td>
+            <td style="width: 25%; padding: 5px; text-align: center; color: white; font-size: 16px;">Full Ext. Att.</td>
+        
+            <td style="width: 25%; padding: 5px; text-align: center; color: white; font-size: 16px;">Masked Ext. Att.</td>
+        
+            <td style="width: 25%; padding: 5px; text-align: center; color: white; font-size: 16px;">Anchor Ext. Att.</td>
+        
+        </tr>
+        <tr>
+    <td></td>
+            <td style="padding: 0;">
+                <video width="384" height="213" style="width: 100%;" src="assets/analysis/horse/full_ea.mp4" autoplay loop controls muted></video>
+            </td>
+        
+            <td style="padding: 0;">
+                <video width="384" height="213" style="width: 100%;" src="assets/analysis/horse/masked_ea.mp4" autoplay loop controls muted></video>
+            </td>
+        
+            <td style="padding: 0;">
+                <video width="384" height="213" style="width: 100%;" src="assets/analysis/horse/anchor_ea.mp4" autoplay loop controls muted></video>
+            </td>
+        
+        </tr>
+    </table>
+    
+        <tr>
+            </table>
+            <p>&nbsp;</p>
+            <hr>
+            </td>
+        
+    <h2 id="Limitations" align="left"><a name="image-results" id="image-results"></a>Limitations</h2>
+    <p align="left"> In some cases, the T2V diffusion model struggles to
+precisely follow the edit prompt.
+    </p>
+    <br/>
+
+    <table  width="1200" align="center">
+    <tbody>
+    
+    <table style="width: 100%; border-collapse: collapse; margin: 20px auto;">
+        <tr>
+            <th style="font-size: 16px; padding: 10px; text-align: center; width: 50%;">Original video</th>
+    
+            <th style="font-family: Chalkduster; padding: 10px; text-align: center; width: 50%;">A fish bowl encircling the boy's head, in bowl fish goldfish swimming around the boy's head</th>
+        
+        </tr>
+        <tr>
+    
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/limitations/kid_game/original.mp4" autoplay loop controls muted/>
+            </td>
+        
+            <td style="padding: 10px; text-align: center;">
+                <video style="width: 100%; max-width: 720px; display: block; margin: 0 auto;"
+                    src="assets/limitations/kid_game/result.mp4" autoplay loop controls muted/>
+            </td>
+        
+        </tr>
+    </table>
+    
+            <tr>
+            </tbody>
+                </table>
+            <p><br>
+            </p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+
+            
+    <script>
+            document.addEventListener('keydown', function (event) {
+                // Check if the pressed key is the spacebar (keyCode 32)
+                if (event.keyCode === 32) {
+                    // Pause all videos on the page
+                    var videos = document.querySelectorAll('video');
+                    videos.forEach(function(video) {
+                        if (!video.paused) {
+                            video.pause();
+                        } else {
+                            video.play();
+                        }
+                    });
+                    // Prevent the default behavior of the space key (e.g., scrolling the page)
+                    event.preventDefault();
+                }
+            });
+        </script>
+    
+        </body></html>
+        
