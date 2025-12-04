@@ -116,14 +116,16 @@
     </section>
     <!-- Teaser video-->
 
-  <section class="hero teaser">
-  <div class="container is-max-desktop">
+   <section class="hero teaser">
+    <div class="container is-max-desktop">
         <div class="container is-max-desktop is-centered has-text-centered">
-      <video autoplay="" muted="" loop="" playsinline="" width="720px" height="480px">Your browser does not support the &lt;video&gt; tag.
-        <source src="sm/assets/teaser.mp4" type="video/mp4">
-      </video>
-  </div>
-  </div>
+            <!-- V1: Added preload="auto" for critical video -->
+            <video autoplay muted loop playsinline width="720px" height="480px" preload="auto">
+                <source src="sm/assets/teaser.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
 </section>
 <!-- End teaser video -->
 
