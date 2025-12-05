@@ -687,37 +687,3 @@ document.addEventListener('DOMContentLoaded', function() {
   // Call this function after the page has loaded
   setTimeout(addDataTextAttributes, 500);
 });
-
-// =====================================================
-// SHOW MORE RESULTS BUTTON
-// =====================================================
-document.addEventListener('DOMContentLoaded', function() {
-  // Find the results section
-  const resultsSection = document.getElementById('results');
-  if (!resultsSection) return;
-  
-  // Find the flex container that holds all comparison-wrappers
-  const resultsContainer = resultsSection.querySelector('div[style*="display: flex"][style*="flex-wrap"]');
-  if (!resultsContainer) return;
-  
-  // Count total results
-  const allResults = resultsContainer.querySelectorAll('.comparison-wrapper');
-  const totalResults = allResults.length;
-  
-  // Only add button if there are more than 9 results
-  if (totalResults <= 9) return;
-  
-  // Create the "Show More" button
-  const showMoreBtn = document.createElement('button');
-  showMoreBtn.className = 'show-more-btn';
-  showMoreBtn.textContent = 'Show More Results';
-  
-  // Insert button after the results container
-  resultsContainer.after(showMoreBtn);
-  
-  // Add click handler
-  showMoreBtn.addEventListener('click', function() {
-    resultsSection.classList.add('expanded');
-    this.classList.add('hidden');
-  });
-});

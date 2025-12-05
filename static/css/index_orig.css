@@ -500,14 +500,29 @@ h2, h3, h4, .abstract-title {
   .container {
     padding: 0 15px;
   }
-  
-  /* Comparison wrapper - keep compact */
+   /* Comparison wrapper adjustments */
   .comparison-wrapper {
-    padding: 8px !important;
-    margin: 8px !important;
-    max-width: 480px !important;
+    padding: 15px !important;
+    margin: 10px 0 !important;
+  }
+  .comparison-wrapper {
+  width: 100% !important;
+  max-width: none !important;
   }
 
+  .comparison-wrapper {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+
+  .comparison-wrapper [style*="display: flex"] {
+    flex-direction: column !important;
+  }
+
+  .comparison-wrapper [style*="justify-content: space-between"] {
+    gap: 20px !important;
+  }
   /* Video grid adjustments */
   .video-grid-wide {
     grid-template-columns: 1fr;
@@ -520,33 +535,16 @@ h2, h3, h4, .abstract-title {
   }
 }
 
-@media screen and (max-width: 768px) {
-  /* Keep INPUT + VFX side by side, just smaller */
-  .comparison-wrapper {
-    max-width: 95% !important;
-    margin: 10px auto !important;
-  }
-  
-  /* Smaller labels on mobile */
-  .comparison-wrapper span[style*="font-size: 1.1em"] {
-    font-size: 0.8em !important;
-  }
-  
-  /* Smaller typewriter text */
-  [class^="typewriter-input-"] {
-    font-size: 0.75em !important;
-    padding: 5px 10px !important;
-    min-width: 200px !important;
-  }
-}
+/*video:hover {*/
+/*  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);*/
+/*  transform: scale(2.01);*/
+/*  transition: all 0.3s ease;*/
+/*  border-radius: 12px;*/
+/*}*/
 
-@media screen and (max-width: 480px) {
-  .comparison-wrapper {
-    padding: 6px !important;
-  }
-  
-  .comparison-wrapper span[style*="font-size: 1.1em"] {
-    font-size: 0.7em !important;
+@media screen and (max-width: 768px) {
+  .comparison-wrapper > div {
+    width: 100% !important;
   }
 }
 
@@ -886,58 +884,4 @@ body {
   .modal-caption p {
     font-size: 1em;
   }
-}
-
-/* =====================================================
-   RESULTS GRID - TIGHTER MARGINS
-===================================================== */
-
-#results .container {
-  max-width: 1450px !important;
-  padding: 0 10px !important;
-}
-
-#results .comparison-wrapper {
-  max-width: 450px !important;
-  margin: 8px !important;
-}
-
-/* =====================================================
-   SHOW RESULTS IN BATCHES
-===================================================== */
-
-/* Hide results beyond the first 9 by default */
-#results .comparison-wrapper:nth-child(n+10) {
-  display: none;
-}
-
-/* When expanded, show all results */
-#results.expanded .comparison-wrapper:nth-child(n+10) {
-  display: block;
-}
-
-/* Show More button */
-.show-more-btn {
-  display: block;
-  margin: 30px auto;
-  padding: 14px 50px;
-  background: #DCEFE1;
-  border: 2px solid #333;
-  border-radius: 30px;
-  font-family: 'Google Sans', 'Noto Sans', sans-serif;
-  font-size: 1em;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.show-more-btn:hover {
-  background: #333;
-  color: white;
-}
-
-/* Hide button when results are expanded */
-#results.expanded + .show-more-btn,
-.show-more-btn.hidden {
-  display: none;
 }
